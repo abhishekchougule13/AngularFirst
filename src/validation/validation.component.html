@@ -1,0 +1,49 @@
+<p>validation works!</p>
+<form [formGroup]="formCustomerGroup" (ngSubmit)="onformsubmit()">
+    <div class="container">
+        <div class="form-group">
+            <label>Customer Name</label>
+
+            <input type="text" formControlName="CustomerName">
+            <div *ngIf="formCustomerGroup.get('CustomerName') && isSubmitted">
+                <div *ngIf="formCustomerGroup.get('CustomerName')?.hasError('required')">
+                    <span style="color: red;">Please Enter Customer Name</span>
+                </div>
+                <div *ngIf="formCustomerGroup.get('CustomerName')?.hasError('pattern')">
+                    <span style="color: red;">numbers are not allowed <br>
+                        length should not exceed more than 20 characters </span>
+                </div>
+
+
+
+            </div><br>
+            <label>id </label>
+            <input type="text" formControlName="customerid">
+            <div *ngIf="formCustomerGroup.get('customerid') && isSubmitted">
+                <div *ngIf="formCustomerGroup.get('customerid')?.hasError('required')">
+                    <span style="color: red;">Please Enter Customer id</span>
+                </div>
+            </div>
+            <div *ngIf="formCustomerGroup.get('customerid') && isSubmitted">
+                <div *ngIf="formCustomerGroup.get('customerid')?.hasError('pattern')">
+                    <span style="color: red;">only numbers are allowed</span>
+                </div>
+            </div>
+        </div>
+
+        <label>email id </label>
+            <input type="text" formControlName="emailid">
+            <div *ngIf="formCustomerGroup.get('emailid') && isSubmitted">
+                <div *ngIf="formCustomerGroup.get('emailid')?.hasError('required')">
+                    <span style="color: red;">Please Enter email id</span>
+                </div>
+            </div>
+            <div *ngIf="formCustomerGroup.get('emailid') && isSubmitted">
+                <div *ngIf="formCustomerGroup.get('emailid')?.hasError('pattern')">
+                    <span style="color: red;">not correct email</span>
+                </div>
+            </div>
+        <button type="submit" class="btn btn-sm btn-info">Submit</button>
+
+    </div>
+</form>

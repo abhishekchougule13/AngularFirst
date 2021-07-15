@@ -1,0 +1,31 @@
+<div class="container">
+    <H4>data binding</H4>
+    first name:{{firstname}} <br>
+    last name:{{lastname}} <br>
+    age:{{age}} <br>
+    country: {{country}} <br>
+    gender :{{gender}} <br>
+    receiveletter:{{receiveletter==true?"send new letter":"dont send mi"}} <br>
+
+    <div>
+        first name <input type="text" [(ngModel)]="firstname" > <br>
+        Last name <input type="text" [(ngModel)]="lastname" > <br>
+        age <input type="text" [(ngModel)]="age" > <br>
+        recive letter <input type="checkbox" ng-model="receiveletter">
+        gender <input type="radio"[(ngModel)]="gender" name="gender" value="m"><span>m</span><br>
+        recive letter <input type="checkbox"[(ngModel)]="receiveletter">
+        gender <input type="radio" [(ngModel)]="gender" name="gender" value="f"><span>f</span><br>
+
+        <select [(ngModel)]="country">
+        <option>india</option>
+        <option>aus</option>
+        </select>
+
+        <br><br>
+        <input type="button" value="change data" (click)="changedata()">
+
+       
+       
+    </div>
+
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="form-group">
+        <label> customer code</label>
+        <input type="text" [(ngModel)]="customermodel.customercode" 
+        name="" id="">
+    </div>
+    <div class="form-group">
+        <label> customer name</label>
+        <input type="text" [(ngModel)]="customermodel.customername" 
+        name="" id="">
+    </div>
+    <div class="form-group">
+        <label> customer amount</label>
+        <input type="text" [(ngModel)]="customermodel.customeramount" 
+        name="" id="">
+        <div>
+        <input type="button" value="Add customer" (click)="Addcustomer()">
+        </div>
+    </div>
+
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <th>name</th>
+                <th>price</th>
+                <th>categoery</th>
+            </thead>  
+            <tbody>
+               <tr *ngFor="let x of customermodels">
+                  
+                <td>{{x.customername}} </td>
+                <td>{{x.customercode}} </td>
+                <td>{{x.customeramount}} </td>
+                 
+               </tr>
+            </tbody>
+        </table>
+    </div>
+
+   
+</div>
+

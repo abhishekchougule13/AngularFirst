@@ -1,0 +1,20 @@
+<p>practice works!</p>
+<form [formGroup]="formstudentgroup" (ngSubmit)="onformsubmit()">
+    <div class="container">
+        <label>name the name </label>
+        <input type="text" placeholder="name" formcontrolname="studentname">
+        <div *ngIf="formstudentgroup.get('studentname') && isSubmitted">
+            <div *ngIf="formstudentgroup.get('studentname')?.hasError('required')">
+                <span style="color: red;">please enter the name </span>
+
+            </div>
+            
+        </div>
+<br>
+       <input type="submit" class="form-submit">
+       
+
+        
+    </div>
+
+</form>

@@ -1,0 +1,27 @@
+<div class="container">
+    <fieldset>
+        <legend>filter product by category</legend>
+        <input type="radio" [(ngModel)]='filter' name="filter" value="electronics">
+        <span> electronics</span>
+        <input type="radio" [(ngModel)]='filter' name="filter" value="shoes">
+        <span> shoes</span>
+
+    </fieldset>
+   
+    <table class="table table-hover">
+        <thead>
+            <th>name</th>
+            <th>price</th>
+            <th>categoery</th>
+        </thead>  
+        <tbody>
+           <tr *ngFor="let products of product">
+               <ng-container *ngIf="products.category==filter">
+            <td>{{products.name}} </td>
+            <td>{{products.price}} </td>
+            <td>{{products.category}} </td>
+              </ng-container>
+           </tr>
+        </tbody>
+    </table>
+</div>
